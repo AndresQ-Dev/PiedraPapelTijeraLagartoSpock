@@ -1,0 +1,9 @@
+# Ignorar los saltos de línea en archivos SVG
+images/*.svg text eol=lf
+
+images/lagarto.svg binary
+images/paper.svg binary
+images/rock.svg binary
+images/scissors.svg binary
+images/spock.svg binary
+

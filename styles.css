@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: url('spock.jpg') no-repeat center center fixed;
+    background: url('images/background.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
@@ -9,99 +9,108 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    backdrop-filter: blur(2px); /* Aplica el efecto de difuminado */
-    -webkit-backdrop-filter: blur(2px); /* Para compatibilidad con Safari */
-  }
-  
-  /* Styles for HTML elements */
-  
-  h1 {
-      font-size: 4em;
-      font-weight: bold;
-      color: #e9e8e8;
-      margin-top: 1rem;
-      text-align: center;
-  }
-  
-  p {
-      font-size: 1rem;
-      line-height: 1.5;
-      color: #666;
-  }
-  
-  #game {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      margin: 2rem;
-  }
-  
-  #game .poo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.3rem;
-      font-weight: bold;
-      border-radius: 10%;
-      min-width: 220px;
-      color: #fff;
-      background-color: #ec6a0c;
-      padding: 1rem 3.5rem;
-      margin: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  #game .poo:hover {
-      background-color: #d35400;
-      transform: scale(1.1);
-      font-style: italic;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  }
-  
-  #result {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #333;
-      text-align: center;
-      margin: 2rem;
-      padding: 1rem;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-      h1 {
-          font-size: 1.5rem;
-      }
-  
-      #game .poo {
-          font-size: 1rem;
-          padding: 0.75rem 2rem;
-          min-width: 180px;
-      }
-  
-      #result {
-          font-size: 1.2rem;
-      }
-  }
-  
-  @media (max-width: 480px) {
-      h1 {
-          font-size: 1.2rem;
-      }
-  
-      #game .poo {
-          font-size: 0.9rem;
-          padding: 0.5rem 1.5rem;
-          min-width: 150px;
-      }
-  
-      #result {
-          font-size: 1rem;
-      }
-  }
+    backdrop-filter: blur(8px); /* Aplica el efecto de difuminado */
+    -webkit-backdrop-filter: blur(8px); /* Para compatibilidad con Safari */
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 1rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+#game {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+}
+
+#game .poo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+    min-width: 220px;
+    color: #fff;
+    background-color: #ec6a0c;
+    margin: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 0.75rem 0rem;
+}
+
+#game .poo img {
+    max-width: 100px; /* Establecer un tamaño máximo para las imágenes */
+    max-height: 100px; /* Establecer un tamaño máximo para las imágenes */
+    object-fit: contain; /* Asegurar que la imagen mantenga su proporción */
+    pointer-events: none; /* Permitir que los clics pasen a través de la imagen al botón */
+}
+
+#game .poo:hover {
+    background-color: #d35400;
+    transform: scale(1.1);
+    font-style: italic;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#result {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin: 2rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #game .poo {
+        font-size: 1rem;
+        padding: 0.75rem 2rem;
+        min-width: 180px;
+    }
+
+    #game .poo img {
+        max-width: 80px; /* Ajustar tamaño máximo para pantallas más pequeñas */
+        max-height: 80px; /* Ajustar tamaño máximo para pantallas más pequeñas */
+    }
+
+    #result {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    #game .poo {
+        font-size: 0.9rem;
+        padding: 0.5rem 1.5rem;
+        min-width: 150px;
+    }
+
+    #game .poo img {
+        max-width: 60px; /* Ajustar tamaño máximo para pantallas más pequeñas */
+        max-height: 60px; /* Ajustar tamaño máximo para pantallas más pequeñas */
+    }
+
+    #result {
+        font-size: 1rem;
+    }
+}
