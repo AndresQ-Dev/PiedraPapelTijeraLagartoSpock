@@ -1,3 +1,6 @@
+
+// 1. Definir las reglas del juego
+
 document.addEventListener('DOMContentLoaded', () => {
     // Definir las reglas del juego
     const rules = {
@@ -22,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para determinar el ganador
     function determineWinner(playerChoice, computerChoice) {
         if (playerChoice === computerChoice) {
-            return '¡Empate! <br>____<br>{ó_ó}';
+            return '¡Empate! <br>{-_-}';
         } else if (rules[playerChoice].includes(computerChoice)) {
             return '¡Ganaste! <br>:)';
         } else {

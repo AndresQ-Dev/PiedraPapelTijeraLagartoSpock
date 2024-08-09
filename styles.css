@@ -1,7 +1,12 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background: url('images/background.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background-color: #49c5b6; /* Color de fondo casi blanco */
     margin: 0;
     padding: 0;
     display: flex;
@@ -9,19 +14,32 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    backdrop-filter: blur(8px); /* Aplica el efecto de difuminado */
-    -webkit-backdrop-filter: blur(8px); /* Para compatibilidad con Safari */
+    overflow: hidden;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+
+.banner img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    pointer-events: none;
 }
 
 h1 {
     font-size: 2rem;
     font-weight: bold;
     color: #333;
-    margin-top: 1rem;
+    background-color: #ECD06F;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
-    padding: 0.5rem 1rem;
     border-radius: 10px;
+    padding: 10px;
+    margin: 1rem;
 }
 
 #game {
@@ -29,32 +47,36 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 2rem;
+    /* margin: 1rem; */
+    padding: 0; /* Asegúrate de que no haya padding en el contenedor */
 }
 
 #game .poo {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10%;
-    min-width: 220px;
-    color: #fff;
-    background-color: #ec6a0c;
+    width: 220px; /* Establecer un ancho fijo */
+    height: 220px; /* Establecer una altura fija igual al ancho */
+    border-radius: 50%; /* Hacer que los botones sean redondos */
+    font-size: 1.5rem;
+    background-color: #ECD06F;
     margin: 1rem;
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 0.75rem 0rem;
+    padding: 0; /* Asegúrate de que no haya padding en los botones */
+    border: none; /* Eliminar cualquier borde adicional */
+    box-sizing: border-box; /* Incluir padding y borde en el tamaño total del elemento */
 }
 
 #game .poo img {
     max-width: 100px; /* Establecer un tamaño máximo para las imágenes */
     max-height: 100px; /* Establecer un tamaño máximo para las imágenes */
-    object-fit: contain; /* Asegurar que la imagen mantenga su proporción */
+    object-fit: contain; /*Asegurar que la imagen mantenga su proporción*/
     pointer-events: none; /* Permitir que los clics pasen a través de la imagen al botón */
 }
 
 #game .poo:hover {
-    background-color: #d35400;
+    background-color: #b3993e;
     transform: scale(1.1);
     font-style: italic;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
@@ -65,11 +87,13 @@ h1 {
     font-weight: bold;
     color: #333;
     text-align: center;
-    margin: 2rem;
+    min-width: 2rem;
+    /* margin: 1rem; */
     padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
-    border-radius: 10px;
+    /* background-color: #302e2e; */
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
 }
 
 /* Responsive styles */
@@ -79,9 +103,12 @@ h1 {
     }
 
     #game .poo {
-        font-size: 1rem;
-        padding: 0.75rem 2rem;
-        min-width: 180px;
+        height: 150px; /* Establecer una altura fija igual al ancho */
+        width: 130px; /* Establecer un ancho fijo */
+        min-width: 1.1rem;
+        font-size: 0.9rem;
+        padding: 0.5rem 1.5rem;
+        /* min-width: 10px; */
     }
 
     #game .poo img {
@@ -100,9 +127,12 @@ h1 {
     }
 
     #game .poo {
+        height: 100px; /* Establecer una altura fija igual al ancho */
+        width: 90px; /* Establecer un ancho fijo */
+        min-width: 1.1rem;
         font-size: 0.9rem;
         padding: 0.5rem 1.5rem;
-        min-width: 150px;
+        /* min-width: 10px; */
     }
 
     #game .poo img {
